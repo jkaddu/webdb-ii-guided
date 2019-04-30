@@ -43,7 +43,7 @@ router.get('/:id', (req, res) => {
 
 router.post('/', (req, res) => {
 	// insert into roles () values req body
-	if (req.body.name) {
+	if (!req.body.name) {
 		res.status(400).json({ message: 'Please provide a name' });
 	}
 	db('roles')
